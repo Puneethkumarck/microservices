@@ -1,0 +1,27 @@
+discovery:
+  image: puneethck/eureka-server
+  ports:
+    - "8001:8001"
+
+jwt:
+  image: puneethck/jwt-auth-server
+  ports:
+    - "8002:8002"
+  links:
+    - discovery
+
+business:
+  image: puneethck/business-logic-api
+  ports:
+     - "8003:8003"
+  links:
+    - discovery
+    - jwt
+
+reports:
+  image: puneethck/reports-api
+  ports:
+    - "8004:8004"
+  links:
+    - discovery
+    - jwt
