@@ -58,6 +58,7 @@
                 <configuration>
                     <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
                     <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
+                    <skipDocker>${docker.skip}</skipDocker>
                     <resources>
                         <resource>
                             <targetPath>/</targetPath>

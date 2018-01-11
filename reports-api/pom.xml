@@ -26,7 +26,7 @@
         </dependency>
     </dependencies>
 
-    <build>
+     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -43,6 +43,7 @@
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>${docker.plugin.version}</version>
+
                 <executions>
                     <execution>
                         <phase>package</phase>
@@ -54,6 +55,9 @@
                 <configuration>
                     <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
                     <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
+                    <skipDocker>${docker.skip}</skipDocker>
+                 <!--   <dockerHost>https://192.168.99.100:2376</dockerHost>
+                    <dockerCertPath>C:\Users\puneethkumar\.docker\machine\certs</dockerCertPath>-->
                     <resources>
                         <resource>
                             <targetPath>/</targetPath>
