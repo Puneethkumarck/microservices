@@ -12,7 +12,7 @@ eureka:
     healthcheck:
        enabled: true
     serviceUrl:
-       defaultZone: http://localhost:8001/eureka/
+       defaultZone: http://discovery:8001/eureka/
   instance:
     leaseRenewalIntervalInSeconds: 5
     preferIpAddress: true
